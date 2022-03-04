@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SettingsFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <ImageButton
+                android:id="@+id/ibS"
+                android:layout_width="39dp"
+                android:layout_height="39dp"
+                android:layout_marginTop="80dp"
+                android:background="@color/white"
+                android:src="@drawable/ic_baseline_add_alert_24"
+                app:layout_constraintEnd_toEndOf="@+id/ibGS"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/ibGS"
+                app:layout_constraintTop_toBottomOf="@+id/ibGS" />
+
+            <ImageButton
+                android:id="@+id/ibHP"
+                android:layout_width="39dp"
+                android:layout_height="39dp"
+                android:layout_marginTop="80dp"
+                android:background="@color/white"
+                android:src="@drawable/ic_baseline_add_alert_24"
+                app:layout_constraintEnd_toEndOf="@+id/ibS"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="@+id/ibS"
+                app:layout_constraintTop_toBottomOf="@+id/ibS" />
+
+            <ImageButton
+                android:id="@+id/ibHC"
+                android:layout_width="39dp"
+                android:layout_height="39dp"
+                android:layout_marginTop="84dp"
+                android:background="@color/white"
+                android:src="@drawable/ic_baseline_add_alert_24"
+                app:layout_constraintEnd_toEndOf="@+id/ibHP"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/ibHP"
+                app:layout_constraintTop_toBottomOf="@+id/ibHP" />
+
+            <com.google.android.material.textfield.TextInputLayout
+
+                android:id="@+id/tiMaxHC"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="106dp"
+                android:layout_height="61dp"
+                android:hint="Max"
+                app:layout_constraintEnd_toEndOf="@+id/tiMaxHP"
+                app:layout_constraintStart_toStartOf="@+id/tiMaxHP"
+                app:layout_constraintTop_toTopOf="@+id/tiMinHC">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etMaxHC"
+                    android:text="8"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="text" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+
+                android:id="@+id/tiMinHC"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="106dp"
+                android:layout_height="61dp"
+                android:layout_marginTop="14dp"
+                android:hint="Min"
+                app:layout_constraintEnd_toEndOf="@+id/tiMinHP"
+                app:layout_constraintStart_toStartOf="@+id/tiMinHP"
+                app:layout_constraintTop_toBottomOf="@+id/tvAjustesHuerfCaballo">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etMinHC"
+                    android:text="5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="text" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+
+                android:id="@+id/tiMaxHP"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="106dp"
+                android:layout_height="61dp"
+                android:hint="Max"
+                app:layout_constraintEnd_toEndOf="@+id/tiMaxS"
+                app:layout_constraintStart_toStartOf="@+id/tiMaxS"
+                app:layout_constraintTop_toTopOf="@+id/tiMinHP">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etMaxHP"
+                    android:text="8"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="text" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+
+                android:id="@+id/tiMinHP"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="106dp"
+                android:layout_height="61dp"
+                android:layout_marginTop="14dp"
+                android:hint="Min"
+                app:layout_constraintEnd_toEndOf="@+id/tiMinS"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/tiMinS"
+                app:layout_constraintTop_toBottomOf="@+id/tvAjustesHuerfPleno">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etMinHP"
+                    android:text="5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="text" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+
+                android:id="@+id/tiMaxS"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="106dp"
+                android:layout_height="61dp"
+                android:hint="Max"
+                app:layout_constraintEnd_toEndOf="@+id/tiMaxGS"
+                app:layout_constraintStart_toStartOf="@+id/tiMaxGS"
+                app:layout_constraintTop_toTopOf="@+id/tiMinS">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etMaxS"
+                    android:text="7"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="text" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+
+                android:id="@+id/tiMinS"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="106dp"
+                android:layout_height="61dp"
+                android:layout_marginTop="14dp"
+                android:hint="Min"
+                app:layout_constraintEnd_toEndOf="@+id/tiMinGS"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/tiMinGS"
+                app:layout_constraintTop_toBottomOf="@+id/tvAjustesSerie">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etMinS"
+                    android:text="4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="text" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:id="@+id/tvTituloAjustes"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:fontFamily="monospace"
+                android:gravity="center"
+                android:text="Ajustes"
+                android:textAlignment="center"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.textfield.TextInputLayout
+
+                android:id="@+id/tiMinGS"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="106dp"
+                android:layout_height="61dp"
+                android:layout_marginTop="14dp"
+                android:hint="Min"
+                app:layout_constraintEnd_toStartOf="@+id/tiMaxGS"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvAjustesGranSerie">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etMinGS"
+                    android:text="3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="text" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+
+                android:id="@+id/tiMaxGS"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="106dp"
+                android:layout_height="61dp"
+                android:layout_marginStart="46dp"
+                android:hint="Max"
+                app:layout_constraintStart_toEndOf="@+id/tvAjustesGranSerie"
+                app:layout_constraintTop_toTopOf="@+id/tiMinGS">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etMaxGS"
+                    android:text="6"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="text" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:id="@+id/tvAjustesGranSerie"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="34dp"
+                android:fontFamily="sans-serif"
+                android:text="Gran Serie"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvTituloAjustes" />
+
+            <TextView
+                android:id="@+id/tvAjustesSerie"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="Serie"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="@+id/tvAjustesGranSerie"
+                app:layout_constraintTop_toBottomOf="@+id/tiMinGS" />
+
+            <TextView
+                android:id="@+id/tvAjustesHuerfPleno"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="Huérfanos a Pleno"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="@+id/tvAjustesSerie"
+                app:layout_constraintTop_toBottomOf="@+id/tiMinS" />
+
+            <TextView
+                android:id="@+id/tvAjustesHuerfCaballo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="Huérfanos a Caballo"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="@+id/tvAjustesHuerfPleno"
+                app:layout_constraintTop_toBottomOf="@+id/tiMinHP" />
+
+            <ImageButton
+                android:id="@+id/ibGS"
+                android:layout_width="39dp"
+                android:layout_height="39dp"
+                android:layout_marginTop="92dp"
+                android:background="@color/white"
+                android:src="@drawable/ic_baseline_add_alert_24"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/tiMaxGS"
+                app:layout_constraintTop_toBottomOf="@+id/tvTituloAjustes" />
+
+            <Button
+                android:id="@+id/btGPref"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="Guardar"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tiMaxHC" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+</FrameLayout>

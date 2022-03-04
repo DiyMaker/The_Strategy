@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PrincipalFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <TextView
+                android:id="@+id/tvletreo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="44dp"
+                android:text="Introduce los numeros que salen en la ruleta"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.textfield.TextInputLayout
+
+                android:id="@+id/tiNumero"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="141dp"
+                android:layout_height="57dp"
+                android:layout_marginStart="64dp"
+                android:layout_marginTop="16dp"
+                android:hint="resultado"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvletreo">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etNumero"
+                    android:layout_width="25dp"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="text" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <Button
+                android:id="@+id/btNumero"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="60dp"
+                android:layout_marginTop="28dp"
+                android:text="introduce"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@+id/tiNumero"
+                app:layout_constraintTop_toBottomOf="@+id/tvletreo" />
+
+            <TextView
+                android:id="@+id/tvGS"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="80dp"
+
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.571"
+                app:layout_constraintStart_toEndOf="@+id/radioGroup"
+                app:layout_constraintTop_toBottomOf="@+id/btNumero" />
+
+            <TextView
+                android:id="@+id/tvS"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="28dp"
+
+                app:layout_constraintEnd_toEndOf="@+id/tvGS"
+                app:layout_constraintStart_toStartOf="@+id/tvGS"
+                app:layout_constraintTop_toBottomOf="@+id/tvGS" />
+
+            <TextView
+                android:id="@+id/tvHP"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+
+                app:layout_constraintEnd_toEndOf="@+id/tvS"
+                app:layout_constraintStart_toStartOf="@+id/tvS"
+                app:layout_constraintTop_toBottomOf="@+id/tvS" />
+
+            <TextView
+                android:id="@+id/tvHC"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="28dp"
+
+                app:layout_constraintEnd_toEndOf="@+id/tvHP"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/tvHP"
+                app:layout_constraintTop_toBottomOf="@+id/tvHP" />
+
+            <Button
+                android:id="@+id/btrc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="48dp"
+                android:text="guardar"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
+
+            <RadioGroup
+                android:id="@+id/radioGroup"
+                android:layout_width="178dp"
+                android:layout_height="207dp"
+                android:layout_marginTop="68dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.27"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tiNumero">
+
+                <RadioButton
+                    android:id="@+id/rbGS"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Gran Serie" />
+
+                <RadioButton
+                    android:id="@+id/rbS"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Serie" />
+
+                <RadioButton
+                    android:id="@+id/rbHP"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Huérfanos a Pleno" />
+
+                <RadioButton
+                    android:id="@+id/rbHC"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Huérfanos a Caballo" />
+
+            </RadioGroup>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </ScrollView>
+
+</FrameLayout>
