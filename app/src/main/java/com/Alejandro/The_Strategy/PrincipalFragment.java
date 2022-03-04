@@ -57,15 +57,15 @@ public class PrincipalFragment extends Fragment {
         tvHC=view.findViewById(R.id.tvHC);
         radioGroup=view.findViewById(R.id.radioGroup);
 
-        SharedPreferences preferences1= this.getActivity().getSharedPreferences("Ajustes",Context.MODE_PRIVATE);
-        minGS=Integer.parseInt(preferences1.getString("minGS","no ha valor"));
-        minS=Integer.parseInt(preferences1.getString("minS","no ha valor"));
-        minHP=Integer.parseInt(preferences1.getString("minHP","no ha valor"));
-        minHC=Integer.parseInt(preferences1.getString("minHC","no ha valor"));
-        maxGS=Integer.parseInt(preferences1.getString("maxGS","no ha valor"));
-        maxS=Integer.parseInt(preferences1.getString("maxS","no ha valor"));
-        maxHP=Integer.parseInt(preferences1.getString("maxHP","no ha valor"));
-        maxHC=Integer.parseInt(preferences1.getString("maxHC","no ha valor"));
+//        SharedPreferences preferences1= this.getActivity().getSharedPreferences("Ajustes",Context.MODE_PRIVATE);
+//        minGS=Integer.parseInt(preferences1.getString("minGS","no ha valor"));
+//        minS=Integer.parseInt(preferences1.getString("minS","no ha valor"));
+//        minHP=Integer.parseInt(preferences1.getString("minHP","no ha valor"));
+//        minHC=Integer.parseInt(preferences1.getString("minHC","no ha valor"));
+//        maxGS=Integer.parseInt(preferences1.getString("maxGS","no ha valor"));
+//        maxS=Integer.parseInt(preferences1.getString("maxS","no ha valor"));
+//        maxHP=Integer.parseInt(preferences1.getString("maxHP","no ha valor"));
+//        maxHC=Integer.parseInt(preferences1.getString("maxHC","no ha valor"));
 
         introduce.setOnClickListener(new View.OnClickListener() {
             @Override
