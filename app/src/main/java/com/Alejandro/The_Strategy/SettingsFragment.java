@@ -13,6 +13,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.Toast;
 
 
 public class SettingsFragment extends Fragment {
@@ -131,6 +132,7 @@ public class SettingsFragment extends Fragment {
                 editor.putInt("minHC",minHC);
                 editor.putInt("maxHC",maxHC);
                 editor.commit();
+                Toast.makeText(getActivity(),"ShareReferences guardadas",Toast.LENGTH_LONG).show();
 
 
 
