@@ -120,7 +120,7 @@ public class SettingsFragment extends Fragment {
                 maxS=Integer.parseInt(etMaxS.getText().toString());
                 maxHP=Integer.parseInt(etMaxHP.getText().toString());
                 maxHC=Integer.parseInt(etMaxHC.getText().toString());
-                SharedPreferences preferences= getActivity().getSharedPreferences("Ajustes", Context.MODE_PRIVATE);
+                SharedPreferences preferences= getContext().getSharedPreferences("Ajustes", Context.MODE_PRIVATE);
                 SharedPreferences.Editor editor=preferences.edit();
                 editor.putInt("minGS",minGS);
                 editor.putInt("maxGS",maxGS);

@@ -1,5 +1,8 @@
 package com.Alejandro.The_Strategy;
 
+import android.content.Context;
+import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -18,13 +21,13 @@ public class PrincipalFragment extends Fragment {
     private EditText etRuleta;
     private Button introduce, guarda;
     private TextView tvGS,tvS,tvHP,tvHC;
-    private RadioGroup RG;
-    private RadioButton rbGS,rbS,rbHP,rbHC;
-    private int numero,gs=0,s=0,hp=0,hc=0;
-    private int GranSerie[]={22,18,29,7,28,12,35,3,26,0,32,15,19,4,21,2,25},
-                Serie[]={33,16,24,5,10,23,8,30,11,36,13,27},
-                HuefanosPleno[]={9,31,14,20,1},
-                HuerfanoCaballo[]={17,34,6};
+    private RadioGroup radioGroup;
+    private RadioButton radioBoton;
+    //private RadioButton rbGS,rbS,rbHP,rbHC;
+    private int numero,contGS=0,contS=0,contHP=0,contHC=0,aciertos,fallos;
+    private int minGS,minS,minHP,minHC,maxGS,maxS,maxHP,maxHC;
+    private String mensaje ;
+
 
 
 
@@ -52,26 +55,76 @@ public class PrincipalFragment extends Fragment {
         tvS=view.findViewById(R.id.tvS);
         tvHP=view.findViewById(R.id.tvHP);
         tvHC=view.findViewById(R.id.tvHC);
-        RG=view.findViewById(R.id.radioGroup);
+        radioGroup=view.findViewById(R.id.radioGroup);
 
-        //numero=Integer.parseInt(etRuleta.getText().toString());
+        SharedPreferences preferences1= this.getActivity().getSharedPreferences("Ajustes",Context.MODE_PRIVATE);
+        minGS=Integer.parseInt(preferences1.getString("minGS","no ha valor"));
+        minS=Integer.parseInt(preferences1.getString("minS","no ha valor"));
+        minHP=Integer.parseInt(preferences1.getString("minHP","no ha valor"));
+        minHC=Integer.parseInt(preferences1.getString("minHC","no ha valor"));
+        maxGS=Integer.parseInt(preferences1.getString("maxGS","no ha valor"));
+        maxS=Integer.parseInt(preferences1.getString("maxS","no ha valor"));
+        maxHP=Integer.parseInt(preferences1.getString("maxHP","no ha valor"));
+        maxHC=Integer.parseInt(preferences1.getString("maxHC","no ha valor"));
 
-        for(int a=0;a<GranSerie.length;a++){
-            if(numero==GranSerie[a]){ gs=gs+1; }
-        }
-        for(int b=0;b<Serie.length;b++){
-            if(numero==Serie[b]){ s=s+1; }
-        }
-        for(int c=0;c<HuefanosPleno.length;c++){
-            if(numero==HuefanosPleno[c]){ hp=hp+1; }
-        }
-        for(int d=0;d<HuerfanoCaballo.length;d++){
-            if(numero==HuefanosPleno[d]){ hc=hc+1; }
-        }
+        introduce.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                nuevoDato();
+            }
+        });
 
-        if(numero==0){}
 
 
       return view;
+    }
+    public void nuevoDato(){
+
+        numero=Integer.parseInt(etRuleta.getText().toString());
+
+        if(numero==22 || numero==18 ||numero==29||numero==7||numero==28||numero==12||numero==35||numero==3||numero==26||numero==0||numero==32
+                ||numero==15||numero==19||numero==4||numero==21||numero==2||numero==25){contGS=0;}
+        else {contGS++;}
+        if(numero==33||numero==16||numero==24||numero==5||numero==10||numero==23||numero==8||numero==30
+                ||numero==11||numero==36||numero==13||numero==27){contS=0;}else{contS++;}
+        if(numero==9||numero==31||numero==14||numero==20||numero==1){contHP=0;}else{contHP++;}
+        if(numero==17||numero==34||numero==6){contHC=0;}else{contHC++;}
+        //granSerie
+        if(contGS<minGS){tvGS.setText(contGS); tvGS.setTextColor(Color.parseColor("#86C8E6"));}
+        else if (contGS<maxGS && contGS>minGS ) { tvGS.setText(contGS); tvGS.setTextColor(Color.parseColor("#FF9800"));}
+        else if(contGS>=maxGS){tvGS.setText(contGS); tvGS.setTextColor(Color.parseColor("#E12315"));}
+        //serie
+        if(contS<minS){tvS.setText(contS); tvS.setTextColor(Color.parseColor("#86C8E6"));}
+        else if (contS<maxS && contS>minS ) { tvS.setText(contS); tvS.setTextColor(Color.parseColor("#FF9800"));}
+        else if(contS>=maxS){tvS.setText(contS); tvS.setTextColor(Color.parseColor("#E12315"));}
+        // huerfanos a plano
+        if(contHP<minHP){tvHP.setText(contHP); tvHP.setTextColor(Color.parseColor("#86C8E6"));}
+        else if (contHP<maxHP && contHP>minHP ) { tvHP.setText(contHP); tvHP.setTextColor(Color.parseColor("#FF9800"));}
+        else if(contHP>=maxHP){tvHP.setText(contHP); tvHP.setTextColor(Color.parseColor("#E12315"));}
+        //huerfanos a caballo
+        if(contHC<minHC){tvHC.setText(contHC); tvHC.setTextColor(Color.parseColor("#86C8E6"));}
+        else if (contHC<maxHC && contHC>minHC ) { tvHC.setText(contHC); tvHC.setTextColor(Color.parseColor("#FF9800"));}
+        else if(contHC>=maxHC){tvHC.setText(contHC); tvHC.setTextColor(Color.parseColor("#E12315"));}
+
+        //radiogruop
+
+        int idSeleccionado = radioGroup.getCheckedRadioButtonId();
+        if (idSeleccionado != -1) {
+            radioBoton =getActivity().findViewById(idSeleccionado);
+            mensaje= radioBoton.getText().toString();
+            radioGroup.clearCheck ();
+        }
+        //gran serie
+        if(mensaje.equals("Gran Serie") && contGS==0){aciertos++;}
+        if(mensaje.equals("Gran Serie") && contGS>0){fallos++;}
+        //serie
+        if(mensaje.equals("Serie") && contS==0){aciertos++;}
+        if(mensaje.equals("Serie") && contS>0){fallos++;}
+        //Huerfanos a pleno
+        if(mensaje.equals("Huérfanos a Pleno") && contHP==0){aciertos++;}
+        if(mensaje.equals("Huérfanos a Pleno") && contHP>0){fallos++;}
+        //huerfanos a caballo
+        if(mensaje.equals("Huérfanos a Caballo") && contHC==0){aciertos++;}
+        if(mensaje.equals("Huérfanos a Caballo") && contHC>0){fallos++;}
     }
 }
