@@ -15,6 +15,7 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
 public class PrincipalFragment extends Fragment {
@@ -58,14 +59,14 @@ public class PrincipalFragment extends Fragment {
         radioGroup=view.findViewById(R.id.radioGroup);
 
 //        SharedPreferences preferences1= this.getActivity().getSharedPreferences("Ajustes",Context.MODE_PRIVATE);
-//        minGS=Integer.parseInt(preferences1.getString("minGS","no ha valor"));
-//        minS=Integer.parseInt(preferences1.getString("minS","no ha valor"));
-//        minHP=Integer.parseInt(preferences1.getString("minHP","no ha valor"));
-//        minHC=Integer.parseInt(preferences1.getString("minHC","no ha valor"));
-//        maxGS=Integer.parseInt(preferences1.getString("maxGS","no ha valor"));
-//        maxS=Integer.parseInt(preferences1.getString("maxS","no ha valor"));
-//        maxHP=Integer.parseInt(preferences1.getString("maxHP","no ha valor"));
-//        maxHC=Integer.parseInt(preferences1.getString("maxHC","no ha valor"));
+//        minGS=Integer.parseInt(preferences1.getString("minGS","3"));
+//        minS=Integer.parseInt(preferences1.getString("minS","4"));
+//        minHP=Integer.parseInt(preferences1.getString("minHP","5"));
+//        minHC=Integer.parseInt(preferences1.getString("minHC","5"));
+//        maxGS=Integer.parseInt(preferences1.getString("maxGS","6"));
+//        maxS=Integer.parseInt(preferences1.getString("maxS","7"));
+//        maxHP=Integer.parseInt(preferences1.getString("maxHP","8"));
+//        maxHC=Integer.parseInt(preferences1.getString("maxHC","8"));
 
         introduce.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -115,16 +116,24 @@ public class PrincipalFragment extends Fragment {
             radioGroup.clearCheck ();
         }
         //gran serie
-        if(mensaje.equals("Gran Serie") && contGS==0){aciertos++;}
-        if(mensaje.equals("Gran Serie") && contGS>0){fallos++;}
+        if(mensaje.equals("Gran Serie") && contGS==0){aciertos++;
+            Toast.makeText(this.getActivity(),"Has acertado",Toast.LENGTH_LONG).show();}
+        if(mensaje.equals("Gran Serie") && contGS>0){fallos++;
+            Toast.makeText(this.getActivity(),"Has fallado",Toast.LENGTH_LONG).show();}
         //serie
-        if(mensaje.equals("Serie") && contS==0){aciertos++;}
-        if(mensaje.equals("Serie") && contS>0){fallos++;}
+        if(mensaje.equals("Serie") && contS==0){aciertos++;
+            Toast.makeText(this.getActivity(),"Has acertado",Toast.LENGTH_LONG).show();}
+        if(mensaje.equals("Serie") && contS>0){fallos++;
+            Toast.makeText(this.getActivity(),"Has fallado",Toast.LENGTH_LONG).show();}
         //Huerfanos a pleno
-        if(mensaje.equals("Huérfanos a Pleno") && contHP==0){aciertos++;}
-        if(mensaje.equals("Huérfanos a Pleno") && contHP>0){fallos++;}
+        if(mensaje.equals("Huérfanos a Pleno") && contHP==0){aciertos++;
+            Toast.makeText(this.getActivity(),"Has acertado",Toast.LENGTH_LONG).show();}
+        if(mensaje.equals("Huérfanos a Pleno") && contHP>0){fallos++;
+            Toast.makeText(this.getActivity(),"Has fallado",Toast.LENGTH_LONG).show();}
         //huerfanos a caballo
-        if(mensaje.equals("Huérfanos a Caballo") && contHC==0){aciertos++;}
-        if(mensaje.equals("Huérfanos a Caballo") && contHC>0){fallos++;}
+        if(mensaje.equals("Huérfanos a Caballo") && contHC==0){aciertos++;
+            Toast.makeText(this.getActivity(),"Has acertado",Toast.LENGTH_LONG).show();}
+        if(mensaje.equals("Huérfanos a Caballo") && contHC>0){fallos++;
+            Toast.makeText(this.getActivity(),"Has fallado",Toast.LENGTH_LONG).show();}
     }
 }
